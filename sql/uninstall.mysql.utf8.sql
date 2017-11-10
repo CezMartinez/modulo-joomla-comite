@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS '#__solicitudes';
+DROP TABLE IF EXISTS `#__solicitudes`;

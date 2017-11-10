@@ -1,0 +1,62 @@
+#hidden-content-b {
+    /* Custom styling */
+    max-width: 550px;
+    border-radius: 4px;
+
+    /* Custom transition - slide from top*/
+    transform: translateY(-50px);
+    transition: all .33s;
+}
+.fancybox-slide--current #hidden-content-b {
+    transform: translateY(0);
+}
+
+.m-btn{
+    background: #FF6666;
+    border-width: 0;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 20px;
+    line-height: 1.5;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 80%;
+    font-weight: 700;
+    margin: 5px 5px 5px 0;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    transition: all .2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.box-hidden{
+    display: none;
+    width: 70%;
+}
+
+.c-pagination {
+    display: inline-block;
+}
+
+.c-pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.c-pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.c-pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}

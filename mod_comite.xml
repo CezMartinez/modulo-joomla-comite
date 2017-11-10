@@ -31,12 +31,8 @@
 	</uninstall>
     <config>
         <fields name="params">		
-            <fieldset
-                name="advanced">
-                <field
-                    name="owncache"
-                    type="list"
-                    default="1"
+            <fieldset name="advanced">
+                <field name="owncache" type="list" default="1"
                     label="COM_MODULES_FIELD_CACHING_LABEL"
                     description="COM_MODULES_FIELD_CACHING_DESC">
                     <option
@@ -46,6 +42,10 @@
                         value="0">COM_MODULES_FIELD_VALUE_NOCACHING
                     </option>
                 </field>
+                <field name="clasemodulo_formulario" type="text" label="Sufijo de la clase del formulario"
+                       description="Ingrese un nombre para la clases del formulario"/>
+                <field name="clasemodulo_tabla" type="text" label="Sufijo de la clase de la tabla"
+                       description="Ingrese un nombre para la clases de la tabla"/>
             </fieldset>                   
         </fields>
     </config>
