@@ -61,4 +61,50 @@ trait SolicitudHelper{
         $cuenta = $db->loadResult();
         return $cuenta;
     }
+
+    function valoresAGuardar($estado){
+        $columnas = array('nombre_trabajo', 'nombre_investigador', 'anio', 'mes', 'numero_registro', 'tipo_trabajo','estado');
+        switch ($estado){
+            case 1: //revisicion
+                array_push($columnas,'fecha_revision');
+                break;
+            case 2: //aprovado
+                array_push($columnas,'fecha_aprovado');
+                break;
+            case 3: //devuelto con observaciones
+                array_push($columnas,'fecha_devuelto');
+                break;
+            case 4: //rechazado
+                array_push($columnas,'fecha_rechazado');
+                break;
+        }
+        return $columnas;
+    }
+
+    function valoresAActualizar($nombre_trabajo, $nombre_investigador, $anio, $mes, $tipo_trabajo, $estado, $db){
+        $columnas = array(
+            $db->quoteName('nombre_trabajo') . ' = ' . $db->quote($nombre_trabajo),
+            $db->quoteName('nombre_investigador') . ' = ' . $db->quote($nombre_investigador),
+            $db->quoteName('anio') . ' = ' . $db->quote($anio),
+            $db->quoteName('mes') . ' = ' . $db->quote($mes),
+            $db->quoteName('tipo_trabajo') . ' = ' . $db->quote($tipo_trabajo),
+            $db->quoteName('estado') . ' = ' . $db->quote($estado),
+        );
+
+        switch ($estado){
+            case 1: //revisicion
+                array_push($columnas,$db->quoteName('fecha_revision') . ' = ' . $db->quote($this->date));
+                break;
+            case 2: //aprovado
+                array_push($columnas,$db->quoteName('fecha_aprovado') . ' = ' . $db->quote($this->date));
+                break;
+            case 3: //devuelto con observaciones
+                array_push($columnas,$db->quoteName('fecha_devuelto') . ' = ' . $db->quote($this->date));
+                break;
+            case 4: //rechazado
+                array_push($columnas,$db->quoteName('fecha_rechazado') . ' = ' . $db->quote($this->date));
+                break;
+        }
+        return $columnas;
+    }
 }

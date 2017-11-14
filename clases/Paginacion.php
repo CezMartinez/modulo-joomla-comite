@@ -3,6 +3,12 @@ defined('_JEXEC') or die('Acceso restringido');
 
 class Paginacion{
 
+    /**
+     * Paginacion constructor.
+     * @param $resultados_por_pagina - a mostrar
+     * @param $pagina_actual
+     * @param $resultados - cantidad de resultados
+     */
     function __construct($resultados_por_pagina,$pagina_actual,$resultados)
     {
         $this->RESULTADOS_POR_PAGINA = $resultados_por_pagina;
